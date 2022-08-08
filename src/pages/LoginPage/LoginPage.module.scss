@@ -1,0 +1,46 @@
+.authPage {
+  background: var(--primary-bg-color);
+  padding-top: 40px;
+  box-sizing: border-box;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .authPageLeft {
+    width: 280px;
+    margin: auto;
+
+    @media screen and (min-width: 768px) {
+      width: 535px;
+    }
+  }
+  .authPageTitle {
+    padding-bottom: 8px;
+    font-weight: 800;
+    font-size: 34px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: var(--primary-text-color);
+
+    
+  }
+  .authtext {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.66;
+    letter-spacing: 0.02em;
+    color: var(--secondary-text-color);
+
+    @media screen and (min-width: 768px) {
+      font-size: 16px;
+      line-height: 2.25;
+      width: 535px;
+    }
+  }
+  .authspan {
+    font-weight: 600;
+    color: var(--primary-text-color);
+  }
+}

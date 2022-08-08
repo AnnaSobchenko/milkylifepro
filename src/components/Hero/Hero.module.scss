@@ -1,0 +1,28 @@
+.hero{
+    height: 500px;
+    background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../../images/hero-bg1.webp);
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  flex-grow: 1;
+  margin: 0 auto;
+
+  h1 {
+   margin: 0 auto;
+    width: 70%;
+    padding: 150px 60px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+    color: var(--third-text-color);
+    @media screen and (min-width: 768px) {
+      font-size: 3.5rem;
+    }
+  }
+  }
