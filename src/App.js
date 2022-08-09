@@ -33,16 +33,22 @@ function App() {
         backgroundColor:
           theme === "light"
             ? "var(--primary-bg-color)"
-            : "var(--second-bg-color)",
-        color: theme === "light" ? "black" : "white",
-        // minHeight: "100vh",
+            : "var(--third-bg-color)",
+        color:
+          theme === "light"
+            ? "var(--secondary-text-color)"
+            : "var(--third-text-color)",
+        fill:
+          theme === "light"
+            ? "var(--secondary-text-color)"
+            : "var(--third-text-color)",
       }}
     >
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<AppBar />}>
             <Route index element={<MainPage />} />
-              <Route path="/mama-marafon" element={<MamaMarafonPage />} />
+            <Route path="/mama-marafon" element={<MamaMarafonPage />} />
             <Route element={<PublicRoute />}>
               <Route path="login" element={<LoginPage />} />
               <Route path="register" element={<RegisterPage />} />

@@ -12,16 +12,18 @@
 
   .list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     align-items: center;
     justify-items: center;
+    grid-template-columns: repeat(1, 1fr);
+    @media screen and (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
   .item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 70vh;
     min-height: 300px;
     background-color: var(--second-bg-color);
     justify-content: space-between;
@@ -29,6 +31,10 @@
     border-radius: 20px;
     box-shadow: 2px 4px 2px var(--shadow-color);
     font-size: 1.4rem;
+    @media screen and (min-width: 768px) {
+      height: 70vh;
+      min-height: 300px;
+    }
 
     &__title {
       display: flex;
@@ -43,7 +49,9 @@
       font-weight: 600;
     }
 
-    &__description , &__online, &__period{
+    &__description,
+    &__online,
+    &__period {
       font-size: 1.1rem;
       font-weight: 400;
       display: flex;

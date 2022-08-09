@@ -10,7 +10,6 @@ import {
 } from "../../../redux/auth/authSelector";
 import { logout } from "../../../redux/auth/authOperations";
 import SwitchTheme from "../../SwitchTheme/SwitchTheme";
-import { getTheme } from "../../../redux/theme/themeSelector";
 import Svg from "../../_shared/Svg/Svg";
 // import SwitchLang from "../SwitchLang/SwitchLang";
 
@@ -20,21 +19,11 @@ const AppBar = () => {
   const userInfo = useSelector(getUserName);
   const isLoggedIn = useSelector(getIsLoggedIn);
   const dispatch = useDispatch();
-  const theme = useSelector(getTheme);
   const isAdmin = useSelector(getIsAdmin);
 
   return (
     <>
-      <header
-        className={s.header}
-        style={{
-          backgroundColor:
-            theme === "light"
-              ? "var(--primary-bg-color)"
-              : "var(--second-bg-color)",
-          color: theme === "light" ? "black" : "white",
-        }}
-      >
+      <header className={s.header}>
         <div className={s.logo}>
           <NavLink to="/">
             <img src={Logo} alt="logo" />
@@ -77,24 +66,9 @@ const AppBar = () => {
             </NavLink>
           )}
           {isLoggedIn && (
-            <div
-              className={s.flex}
-              style={{
-                backgroundColor:
-                  theme === "light"
-                    ? "var(--primary-bg-color)"
-                    : "var(--second-bg-color)",
-                color: theme === "light" ? "black" : "white",
-              }}
-            >
+            <div className={s.flex}>
               <div className={s.name_wrapper}>
-                <div
-                  className={s.letter_wrapper}
-                  style={{
-                    backgroundColor: theme === "light" ? "#b3d4af" : "#7c817b",
-                    color: theme === "light" ? "black" : "white",
-                  }}
-                >
+                <div className={s.letter_wrapper}>
                   {userInfo.slice(0, 1) && (
                     <span className={s.firs_letter}>
                       {userInfo.slice(0, 1)}
@@ -121,28 +95,8 @@ const AppBar = () => {
                 dispatch(logout());
               }}
             >
-              <div
-                className={s.navIconMenu_wrapper}
-                style={{
-                  backgroundColor:
-                    theme === "light"
-                      ? "var(--primary-bg-color)"
-                      : "var(--second-bg-color)",
-                  fill: theme === "light" ? "black" : "white",
-                }}
-              >
-                <svg
-                  className={s.navIcon_signOut}
-                  style={{
-                    backgroundColor:
-                      theme === "light"
-                        ? "var(--primary-bg-color)"
-                        : "var(--second-bg-color)",
-                    // fill: theme === "light" ? "black" : "white",
-                  }}
-                  width="16px"
-                  height="16px"
-                >
+              <div className={s.navIconMenu_wrapper}>
+                <svg className={s.navIcon_signOut} width="16px" height="16px">
                   <use xlinkHref={`${Icons}#icon-sign-out`} />
                 </svg>
               </div>

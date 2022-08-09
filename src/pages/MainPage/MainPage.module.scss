@@ -1,15 +1,4 @@
 .main {
-  // height: calc(100vh - 55px - 56px);
-  // padding-top: 20px;
-  // padding-bottom: 20px;
-  background-color: var(--primary-bg-color);
-
-  @media screen and (min-width: 768px) {
-    // padding-top: 30px;
-    // padding-bottom: 35px;
-    // height: calc(100vh - 80px - 56px);
-  }
-
   .wrapper {
     display: flex;
     flex-direction: column;
@@ -20,37 +9,32 @@
       font-weight: 600;
       line-height: 1.2;
       text-align: center;
-      color: var(--text-color);
       @media screen and (min-width: 768px) {
         font-size: 2.5rem;
-        // margin-top: 24px;
       }
     }
-    .hero{
+    .hero {
       width: 100%;
       background-image: linear-gradient(
-        rgba(47, 48, 58, 0.4),
-        rgba(47, 48, 58, 0.4)
-      ),
-      url(../../images/hero-bg.webp);
-  
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    flex-grow: 1;
-    padding: 118px 60px;
-    // padding-top: 60px;
-    // padding-bottom: 60px;
-    margin: 0 auto;
+          rgba(47, 48, 58, 0.4),
+          rgba(47, 48, 58, 0.4)
+        ),
+        url(../../images/hero-bg.webp);
+
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      flex-grow: 1;
+      padding: 118px 60px;
+      margin: 0 auto;
     }
   }
 
   .text {
     font-size: 1.1rem;
     font-weight: 400;
-    // text-align: center;
     margin-top: 14px;
-    color: var(--secondary-text-color);
+    color: inherit;
     @media screen and (min-width: 768px) {
       font-size: 1.5rem;
       margin-top: 24px;
@@ -64,7 +48,6 @@
       p {
         margin-bottom: 10px;
       }
-      // text-align: left;
     }
   }
   .link {
@@ -85,7 +68,6 @@
     line-height: 1.2;
     font-weight: 600;
     background-color: var(--accent-color);
-    color: var(--third-text-color);
     cursor: pointer;
     @media screen and (min-width: 768px) {
       width: 150px;

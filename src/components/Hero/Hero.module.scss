@@ -12,7 +12,10 @@
   background-size: cover;
   flex-grow: 1;
   margin: 0 auto;
-  margin-top: 70px;
+  margin-top:51px;
+  @media screen and (min-width: 768px) {
+    margin-top: 70px;
+  }
   h1 {
    margin: 0 auto;
     width: 70%;

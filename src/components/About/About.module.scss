@@ -1,16 +1,19 @@
 .about {
   padding: 30px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 25px;
   align-items: center;
   justify-items: center;
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
 
 .text {
   font-size: 1.1rem;
   font-weight: 400;
   margin-bottom: 14px;
-  color: var(--secondary-text-color);
   &:last-child {
     margin-bottom: 0;
 }

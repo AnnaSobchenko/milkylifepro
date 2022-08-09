@@ -1,7 +1,6 @@
 .authPage {  
   min-height: calc(100vh - 70px - 56px);
-  margin-top: 70px;
-  background: var(--primary-bg-color);
+  margin-top: 51px;
   padding-top: 40px;
   box-sizing: border-box;
   @media screen and (min-width: 768px) {
@@ -9,6 +8,14 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 70px;
+  }
+
+  p{
+    margin-top: 10px;
+    a{
+      color: inherit;
+    }
   }
 
   .authPageLeft {
@@ -25,7 +32,6 @@
     font-size: 34px;
     line-height: 1.2;
     letter-spacing: 0.02em;
-    color: var(--primary-text-color);
 
     
   }
@@ -34,7 +40,6 @@
     font-size: 12px;
     line-height: 1.66;
     letter-spacing: 0.02em;
-    color: var(--secondary-text-color);
 
     @media screen and (min-width: 768px) {
       font-size: 16px;
@@ -44,6 +49,5 @@
   }
   .authspan {
     font-weight: 600;
-    color: var(--primary-text-color);
   }
 }
