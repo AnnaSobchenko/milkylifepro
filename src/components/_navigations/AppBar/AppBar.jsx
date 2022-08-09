@@ -15,7 +15,6 @@ import Svg from "../../_shared/Svg/Svg";
 // import SwitchLang from "../SwitchLang/SwitchLang";
 
 const Logo = require("../../../images/logo.png");
-const Tree = require("../../../images/tree.png");
 
 const AppBar = () => {
   const userInfo = useSelector(getUserName);
@@ -41,8 +40,7 @@ const AppBar = () => {
             <img src={Logo} alt="logo" />
           </NavLink>
         </div>
-        <div className={s.header_navLink}>  
-       
+        <div className={s.header_navLink}>
           {isAdmin && (
             <NavLink
               to="/users"
@@ -53,38 +51,32 @@ const AppBar = () => {
             </NavLink>
           )}
 
-           
-            <NavLink
-              to="/"
-              className={({ isActive }) => (isActive ? s.activeStyle : s.link)}
-            >
-              <p>Home</p>
-              <Svg name="home" />
-            </NavLink>
-          
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? s.activeStyle : s.link)}
+          >
+            <p>Головна</p>
+            <Svg name="home" />
+          </NavLink>
+          <NavLink
+            to="/mama-marafon"
+            className={({ isActive }) => (isActive ? s.activeStyle : s.link)}
+          >
+            <p>Мама-марафон</p>
+            <Svg name="marafon" />
+          </NavLink>
+        </div>
+
+        <div className={s.logout}>
           {!isLoggedIn && (
             <NavLink
               to="/login"
               className={({ isActive }) => (isActive ? s.activeStyle : s.link)}
             >
-              <p>Login</p>
+              <p>&#9032;</p>
               <Svg name="login" />
             </NavLink>
           )}
-          {!isLoggedIn && (
-            <NavLink
-              to="/register"
-              className={({ isActive }) => (isActive ? s.activeStyle : s.link)}
-            >
-              <p>Register</p>
-              <div className={s.register}>
-                <Svg name="signup" />
-              </div>
-            </NavLink>
-          )}
-        </div>
-
-        <div className={s.logout}>
           {isLoggedIn && (
             <div
               className={s.flex}

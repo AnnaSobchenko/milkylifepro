@@ -4,7 +4,7 @@ const Photo = require("../../images/photo.png");
 
 const About = () => {
     return ( 
-        <section className={`container ${s.about }`}>
+        <section className={`container ${s.about }`} id="about">
           <div className={s.img}>
             <img src={Photo} alt="replacePhoto" width={450} />            
             </div>

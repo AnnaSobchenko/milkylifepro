@@ -1,4 +1,8 @@
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -9,7 +13,7 @@
 
   @media screen and (min-width: 768px) {
     padding: 0;
-    height: 79px;
+    height: 69px;
     font-size: 1.2rem;
     font-weight: 500;
     line-height: 1.33;
@@ -90,6 +94,10 @@
     color: var(--primary-text-color);
     padding-right: 5px;
     fill: var(--accent-nav-color);
+    p {
+      padding: 5px;
+      margin: 0;
+    }
   }
 
   .activeStyle {

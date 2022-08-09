@@ -6,6 +6,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 import Hero from "../../components/Hero/Hero";
 import About from "../../components/About/About";
+import Helpful from "../../components/Helpful/Helpful";
+import Price from "../../components/Price/Price";
 
 
 const MainPage = () => {
@@ -14,6 +16,8 @@ const MainPage = () => {
    <>
    <Hero />
    <About />
+   <Helpful />
+   <Price />
    </>
   )
 };

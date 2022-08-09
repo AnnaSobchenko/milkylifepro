@@ -15,7 +15,7 @@ const SwitchTheme = () => {
           onClick={() => dispatch(changeTheme("dark"))}
         >
           <span role="img" aria-label="moon">
-            &#127774;
+            &#127766;
           </span>
         </button>
       ) : (
@@ -24,7 +24,7 @@ const SwitchTheme = () => {
           onClick={() => dispatch(changeTheme("light"))}
         >
           <span role="img" aria-label="sun">
-            &#127769;
+            &#127768;
           </span>
         </button>
       )}
