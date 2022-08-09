@@ -41,16 +41,6 @@ const AppBar = () => {
           </NavLink>
         </div>
         <div className={s.header_navLink}>
-          {isAdmin && (
-            <NavLink
-              to="/users"
-              className={({ isActive }) => (isActive ? s.activeStyle : s.link)}
-            >
-              <p> Users</p>
-              <Svg name="users" />
-            </NavLink>
-          )}
-
           <NavLink
             to="/"
             className={({ isActive }) => (isActive ? s.activeStyle : s.link)}
@@ -64,7 +54,16 @@ const AppBar = () => {
           >
             <p>Мама-марафон</p>
             <Svg name="marafon" />
-          </NavLink>
+          </NavLink>{" "}
+          {isAdmin && (
+            <NavLink
+              to="/users"
+              className={({ isActive }) => (isActive ? s.activeStyle : s.link)}
+            >
+              <p> Users</p>
+              <Svg name="users" />
+            </NavLink>
+          )}
         </div>
 
         <div className={s.logout}>

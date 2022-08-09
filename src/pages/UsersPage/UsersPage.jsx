@@ -42,7 +42,7 @@ const UsersPage = () => {
   
 
   return (
-    <section className={`container`}>
+    <section className={`container ${s.users}`}>
       <ul className={s.list}>
         {users.map((user) => (
           <li
@@ -52,6 +52,7 @@ const UsersPage = () => {
           >
             <p className={s.text__name}>{user.name}</p>
             <p className={s.text__email}>{user.email}</p>
+            <p className={s.text__phone}>{user.phone}</p>
             
           </li>
         ))}

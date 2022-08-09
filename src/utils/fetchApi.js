@@ -1,5 +1,5 @@
 import axios from "axios";
-axios.defaults.baseURL = "https://tree-care-rest-api.herokuapp.com/";
+axios.defaults.baseURL = "https://milkylifepro-rest-api.herokuapp.com/";
 // axios.defaults.baseURL = "http://localhost:3001/";
 
 const token = {
@@ -19,10 +19,11 @@ export async function signinUserApi(userData) {
 
 export async function signupUserApi(userData) {
   await axios.post("/api/users/signup", userData);
-  const { name, email, password } = userData;
+  const { name, email, phone, password } = userData;
   const data = signinUserApi({
     name,
     email,
+    phone,
     password,
   });
   return data;

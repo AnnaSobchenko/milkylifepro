@@ -34,7 +34,7 @@ function App() {
             ? "var(--primary-bg-color)"
             : "var(--second-bg-color)",
         color: theme === "light" ? "black" : "white",
-        minHeight: "100vh",
+        // minHeight: "100vh",
       }}
     >      
         <Suspense fallback={<Loader />}>

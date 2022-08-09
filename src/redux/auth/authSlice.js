@@ -10,7 +10,7 @@ import {
 const authSlice = createSlice({
   name: "auth",
   initialState: {
-    user: { email: "", name: "" },
+    user: { email: "", name: "", phone:"" },
     token: null,
     refreshToken: null,
     _id: null,
@@ -62,6 +62,7 @@ const authSlice = createSlice({
     [signin.fulfilled](state, { payload }) {
       state.user.email = payload.user.email;
       state.user.name = payload.user.name;
+      state.user.phone = payload.user.phone;
       state.token = payload.token;
       state.refreshToken = payload.refreshToken;
       state._id = payload._id;

@@ -34,12 +34,20 @@ const AuthForm = ({ isAuth }) => {
           </h2>
           <form onSubmit={handleSubmit} className={s.authFormInput}>
             {isAuth && (
+              <>
               <LabelForm
                 type="name"
                 handleChange={handleChange}
                 handleBlur={handleBlur}
                 values={values}
-              />
+                />
+              <LabelForm
+                type="phone"
+                handleChange={handleChange}
+                handleBlur={handleBlur}
+                values={values}
+                />
+                </>
             )}
             <LabelForm
               type="email"
@@ -61,12 +69,13 @@ const AuthForm = ({ isAuth }) => {
               }}
             >
               <NavLink
-                to={isAuth ? "/login" : "/trees"}
+                to={isAuth ? "/login" : "/"}
                 onClick={() => {
                   toast.success(
                     "A letter has been sent to your e-mail address, follow the link in the letter",
                     { containerId: "A" }
                   );
+                  console.log('values :>> ', values);
                   dispatch(!isAuth ? signin(values) : signup(values));
                   values.email === "admin@mail.com" && dispatch(addIsAdmin());
                 }}
