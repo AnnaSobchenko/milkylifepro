@@ -5,7 +5,7 @@
   height: 50vh;
   border-radius: 50px;
   background: var(--primary-bg-color);
-  color: white;
+  color: var(--secondary-text-color);
   align-items: center;
   flex-direction: column;
   justify-content: center;
@@ -37,11 +37,11 @@
   }
 
   .btn {
-    font-size: .9rem;
+    font-size: 0.9rem;
     margin-top: 30px;
     padding: 5px 10px;
     border-radius: 5px;
-    background-color: var( --btn-bg-color);
+    background-color: var(--btn-bg-color);
     &:hover {
       color: var(--check-color);
     }

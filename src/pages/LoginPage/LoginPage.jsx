@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { getTheme } from "../../redux/theme/themeSelector";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { NavLink } from "react-router-dom";
 
 const LoginPage = () => {
   const theme = useSelector(getTheme);
@@ -19,7 +20,7 @@ const LoginPage = () => {
       }}
     >
       <ToastContainer
-        position={toast.POSITION.TOP_CENTER} //"top-center"
+        position={toast.POSITION.TOP_CENTER}
         autoClose={false}
         newestOnTop={false}
         closeOnClick
@@ -31,6 +32,10 @@ const LoginPage = () => {
       />
       ;
       <AuthForm isAuth={false} />
+      <p>
+        Ще не зареєстровані? &#10233;
+        <NavLink to="/register"> Реєстрація </NavLink>
+      </p>
     </div>
   );
 };

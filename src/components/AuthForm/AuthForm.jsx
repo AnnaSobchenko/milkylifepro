@@ -30,24 +30,24 @@ const AuthForm = ({ isAuth }) => {
       }) => (
         <div className={s.authForm}>
           <h2 className={s.authFormTitle2}>
-            {isAuth ? "Register:" : "Login:"}
+            {isAuth ? "Registration:" : "Login:"}
           </h2>
           <form onSubmit={handleSubmit} className={s.authFormInput}>
             {isAuth && (
               <>
-              <LabelForm
-                type="name"
-                handleChange={handleChange}
-                handleBlur={handleBlur}
-                values={values}
+                <LabelForm
+                  type="name"
+                  handleChange={handleChange}
+                  handleBlur={handleBlur}
+                  values={values}
                 />
-              <LabelForm
-                type="phone"
-                handleChange={handleChange}
-                handleBlur={handleBlur}
-                values={values}
+                <LabelForm
+                  type="phone"
+                  handleChange={handleChange}
+                  handleBlur={handleBlur}
+                  values={values}
                 />
-                </>
+              </>
             )}
             <LabelForm
               type="email"
@@ -61,7 +61,12 @@ const AuthForm = ({ isAuth }) => {
               handleBlur={handleBlur}
               values={values}
             />
-
+            {isAuth && (
+              <p>
+                Натискаючи на кнопку, ви даєте згоду на обробку персональних
+                даних
+              </p>
+            )}
             <div
               className={s.btn}
               style={{
@@ -75,9 +80,7 @@ const AuthForm = ({ isAuth }) => {
                     "A letter has been sent to your e-mail address, follow the link in the letter",
                     { containerId: "A" }
                   );
-                  console.log('values :>> ', values);
                   dispatch(!isAuth ? signin(values) : signup(values));
-                  values.email === "admin@mail.com" && dispatch(addIsAdmin());
                 }}
               >
                 submit

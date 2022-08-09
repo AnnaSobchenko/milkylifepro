@@ -42,8 +42,8 @@ function App() {
         <Routes>
           <Route path="/" element={<AppBar />}>
             <Route index element={<MainPage />} />
-            <Route element={<PublicRoute />}>
               <Route path="/mama-marafon" element={<MamaMarafonPage />} />
+            <Route element={<PublicRoute />}>
               <Route path="login" element={<LoginPage />} />
               <Route path="register" element={<RegisterPage />} />
             </Route>

@@ -1,4 +1,6 @@
-.authPage {
+.authPage {  
+  min-height: calc(100vh - 70px - 56px);
+  margin-top: 70px;
   background: var(--primary-bg-color);
   padding-top: 40px;
   box-sizing: border-box;
@@ -6,6 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
   }
 
   .authPageLeft {

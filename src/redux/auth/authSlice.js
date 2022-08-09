@@ -68,11 +68,13 @@ const authSlice = createSlice({
       state._id = payload._id;
       state.isLoggedIn = true;
       state.isLoading = false;
+      payload.user.email === "admin@mail.com"?state.isAdmin = true:state.isAdmin = false
     },
     [signin.rejected](state, { payload }) {
       state.isLoading = false;
       state.isLoggedIn = false;
       state.error = payload;
+      state.isAdmin = false;
     },
 
     // GET INFO

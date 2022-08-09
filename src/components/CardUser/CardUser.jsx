@@ -6,7 +6,7 @@ const CardUser = ({ contact, closeModal }) => {
   const dispatch = useDispatch();
   const handleDelete = async (e) => {
     const _id = e.target.value;
-    console.log("_id :>> ", _id);
+    // console.log("_id :>> ", _id);
     await dispatch(delUserById(_id));
     closeModal(true);
     dispatch(getAllUsers());
@@ -17,6 +17,7 @@ const CardUser = ({ contact, closeModal }) => {
       <div className={s.usercard}>
         <p className={s.card__name}>{contact.name}</p>
         <p className={s.card__email}>{contact.email}</p>
+        <p className={s.card__phone}>{contact.phone}</p>
         {contact.email !== "admin@mail.com" && (
           <button
             value={contact._id}
