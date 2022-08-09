@@ -20,6 +20,7 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import Footer from "./components/_navigations/Footer/Footer";
 import { getTheme } from "./redux/theme/themeSelector";
 import UsersPage from "./pages/UsersPage/UsersPage";
+import MamaMarafonPage from "./pages/MamaMarafonPage/MamaMarafonPage";
 
 function App() {
   const isAdmin = useSelector(getIsAdmin);
@@ -36,24 +37,25 @@ function App() {
         color: theme === "light" ? "black" : "white",
         // minHeight: "100vh",
       }}
-    >      
-        <Suspense fallback={<Loader />}>
-          <Routes>
-            <Route path="/" element={<AppBar />}>
-              <Route index element={<MainPage />} />
-              <Route element={<PublicRoute />}>
-                <Route path="login" element={<LoginPage />} />
-                <Route path="register" element={<RegisterPage />} />
-              </Route>
-              <Route element={<PrivateRoute />}>
-                {isAdmin && <Route path="users" element={<UsersPage />} />}
-                <Route path="/" element={<MainPage />} />
-              </Route>
-              <Route path="*" element={<Navigate to="/" replace />} />
+    >
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path="/" element={<AppBar />}>
+            <Route index element={<MainPage />} />
+            <Route element={<PublicRoute />}>
+              <Route path="/mama-marafon" element={<MamaMarafonPage />} />
+              <Route path="login" element={<LoginPage />} />
+              <Route path="register" element={<RegisterPage />} />
             </Route>
-          </Routes>
-          <Footer />
-        </Suspense>      
+            <Route element={<PrivateRoute />}>
+              {isAdmin && <Route path="users" element={<UsersPage />} />}
+              <Route path="/" element={<MainPage />} />
+            </Route>
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Route>
+        </Routes>
+        <Footer />
+      </Suspense>
     </div>
   );
 }
