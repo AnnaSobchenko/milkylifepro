@@ -61,8 +61,11 @@ const AppBar = () => {
               to="/login"
               className={({ isActive }) => (isActive ? s.activeStyle : s.link)}
             >
-              <p>&#9032;</p>
-              <Svg name="login" />
+              {/* <p>&#9032;</p> */}
+              {/* <Svg name="login" /> */}
+              <svg className={s.navIcon_signOut} width="23px" height="23px">
+                  <use xlinkHref={`${Icons}#icon-login`} />
+                </svg>
             </NavLink>
           )}
           {isLoggedIn && (
@@ -96,7 +99,7 @@ const AppBar = () => {
               }}
             >
               <div className={s.navIconMenu_wrapper}>
-                <svg className={s.navIcon_signOut} width="16px" height="16px">
+                <svg className={s.navIcon_signOut} width="23px" height="23px">
                   <use xlinkHref={`${Icons}#icon-sign-out`} />
                 </svg>
               </div>

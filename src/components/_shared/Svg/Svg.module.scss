@@ -7,7 +7,7 @@
   @media screen and (min-width: 768px) {
     display: none;
   }
-  svg {
+  svg use {
     fill: var(--accent-nav-color);
   }
 }
