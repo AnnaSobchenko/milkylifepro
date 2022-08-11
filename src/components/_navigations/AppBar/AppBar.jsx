@@ -1,4 +1,4 @@
-import { React } from "react";
+import { React, useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import Icons from "../../../images/symbol-defs.svg";
 import s from "./AppBar.module.scss";
@@ -6,20 +6,43 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   getIsAdmin,
   getIsLoggedIn,
+  getUserProfile,
   getUserName,
 } from "../../../redux/auth/authSelector";
 import { logout } from "../../../redux/auth/authOperations";
 import SwitchTheme from "../../SwitchTheme/SwitchTheme";
 import Svg from "../../_shared/Svg/Svg";
+import ProfileUser from "../../ProfileUser/ProfileUser";
+import Modal from "../../Modal/Modal";
 // import SwitchLang from "../SwitchLang/SwitchLang";
 
 const Logo = require("../../../images/logo.png");
 
 const AppBar = () => {
   const userInfo = useSelector(getUserName);
+  const userProfile = useSelector(getUserProfile);
   const isLoggedIn = useSelector(getIsLoggedIn);
   const dispatch = useDispatch();
   const isAdmin = useSelector(getIsAdmin);
+  // const users = useSelector(getUsers);
+  const [modal, setModal] = useState({
+    open: false,
+    content: null,
+  });
+
+  const openModal = (content) => {
+    setModal({
+      open: true,
+      content,
+    });
+  };
+
+  const closeModal = () => {
+    setModal({
+      open: false,
+      content: null,
+    });
+  };
 
   return (
     <>
@@ -64,12 +87,12 @@ const AppBar = () => {
               {/* <p>&#9032;</p> */}
               {/* <Svg name="login" /> */}
               <svg className={s.navIcon_signOut} width="23px" height="23px">
-                  <use xlinkHref={`${Icons}#icon-login`} />
-                </svg>
+                <use xlinkHref={`${Icons}#icon-login`} />
+              </svg>
             </NavLink>
           )}
           {isLoggedIn && (
-            <div className={s.flex}>
+            <div className={s.flex} onClick={() => openModal(userProfile)}>
               <div className={s.name_wrapper}>
                 <div className={s.letter_wrapper}>
                   {userInfo.slice(0, 1) && (
@@ -109,6 +132,11 @@ const AppBar = () => {
         {/* <SwitchLang /> */}
       </header>
       <Outlet className="container" />
+      {modal.open && (
+        <Modal handleClose={closeModal} checker={true}>
+          <ProfileUser content={modal.content} closeModal={closeModal} />
+        </Modal>
+      )}
     </>
   );
 };

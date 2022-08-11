@@ -11,3 +11,16 @@
     fill: var(--accent-nav-color);
   }
 }
+.navIconTrue {
+  display: flex;
+
+  width: "25px";
+  height: "25px";
+  padding-bottom: 2px;
+  @media screen and (min-width: 768px) {
+    // display: none;
+  }
+  svg use {
+    fill: var(--accent-nav-color);
+  }
+}

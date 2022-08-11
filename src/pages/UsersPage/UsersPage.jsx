@@ -7,7 +7,6 @@ import { getUsers } from "../../redux/user/userSelector";
 import s from "./UsersPage.module.scss";
 
 const UsersPage = () => {
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -35,11 +34,9 @@ const UsersPage = () => {
   };
   const handleOpenModal = (e) => {
     const email = e.currentTarget.id;
-    const userInfo=users.find((el)=>el.email===email)
+    const userInfo = users.find((el) => el.email === email);
     openModal(userInfo);
   };
-
-  
 
   return (
     <section className={`container ${s.users}`}>
@@ -53,13 +50,12 @@ const UsersPage = () => {
             <p className={s.text__name}>{user.name}</p>
             <p className={s.text__email}>{user.email}</p>
             <p className={s.text__phone}>{user.phone}</p>
-            
           </li>
         ))}
       </ul>
       {modal.open && (
         <Modal handleClose={closeModal} checker={true}>
-          <CardUser contact={modal.content} closeModal={closeModal}/>
+          <CardUser contact={modal.content} closeModal={closeModal} />
         </Modal>
       )}
     </section>
