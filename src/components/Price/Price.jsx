@@ -8,7 +8,6 @@ const uuid = require("uuid");
 const Price = () => {
   const isLoggedIn = useSelector(getIsLoggedIn);
 const Prices=useSelector(getAllPrices)
-console.log('Prices', Prices)
 
   return (
     <section className={`container ${s.price}`} id="price">

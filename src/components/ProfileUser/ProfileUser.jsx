@@ -2,7 +2,6 @@ import Svg from "../_shared/Svg/Svg";
 import s from "./ProfileUser.module.scss";
 
 const ProfileUser = ({ content, closeModal }) => {
-  console.log("content :>> ", content);
   return (
     <div className={s.card}>     
       <button className={s.btn} onClick={() => closeModal(true)}>

@@ -63,6 +63,6 @@ export async function delUserByIdApi(id) {
 }
 
 export async function getPricesApi() {
-  const  {data}  = await axios.get("/api/prices");
+  const { data } = await axios.get("/api/prices");
   return data;
 }

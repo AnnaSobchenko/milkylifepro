@@ -14,15 +14,6 @@ const usersSlice = createSlice({
   },
 
   reducers: {
-    // onContactUpdate(state, { payload }) {
-    //   state.phoneForm = { ...payload };
-    // },
-    // onPhoneFormReset(state, { payload }) {
-    //   state.phoneForm = { ...payload };
-    // },
-    // onFilterValueChange(state, { payload }) {
-    //   state.filterValue = [...payload];
-    // },
   },
 
   extraReducers: {

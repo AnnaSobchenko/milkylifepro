@@ -7,10 +7,12 @@ import {
   getNewTokens,
 } from "./authOperations";
 
+const adminEmail = process.env.REACT_APP_ADMIN_EMAIL;
+
 const authSlice = createSlice({
   name: "auth",
   initialState: {
-    user: { email: "", name: "", phone:"",avatarURL:"" },
+    user: { email: "", name: "", phone: "", avatarURL: "" },
     token: null,
     refreshToken: null,
     _id: null,
@@ -69,7 +71,9 @@ const authSlice = createSlice({
       state._id = payload._id;
       state.isLoggedIn = true;
       state.isLoading = false;
-      payload.user.email === "admin@mail.com"?state.isAdmin = true:state.isAdmin = false
+      payload.user.email === adminEmail
+        ? (state.isAdmin = true)
+        : (state.isAdmin = false);
     },
     [signin.rejected](state, { payload }) {
       state.isLoading = false;
@@ -84,8 +88,6 @@ const authSlice = createSlice({
       state.error = null;
     },
     [getInfo.fulfilled](state, { payload }) {
-      console.log("~ payload", payload);
-
       state.user.email = payload.email;
       state.token = payload.token;
       state.refreshToken = payload.refreshToken;
