@@ -8,6 +8,7 @@ import {
   getIsLoggedIn,
   getUserProfile,
   getUserName,
+  getUseravAtarURL,
 } from "../../../redux/auth/authSelector";
 import { logout } from "../../../redux/auth/authOperations";
 import SwitchTheme from "../../SwitchTheme/SwitchTheme";
@@ -20,6 +21,7 @@ const Logo = require("../../../images/logo.png");
 
 const AppBar = () => {
   const userInfo = useSelector(getUserName);
+  const useravAtarURL = useSelector(getUseravAtarURL);
   const userProfile = useSelector(getUserProfile);
   const isLoggedIn = useSelector(getIsLoggedIn);
   const dispatch = useDispatch();
@@ -93,13 +95,15 @@ const AppBar = () => {
           )}
           {isLoggedIn && (
             <div className={s.flex} onClick={() => openModal(userProfile)}>
-              <div className={s.name_wrapper}>
-                <div className={s.letter_wrapper}>
-                  {userInfo.slice(0, 1) && (
+             <div className={s.name_wrapper}>
+                 <div className={s.letter_wrapper}>
+                  {!useravAtarURL.length && userInfo.slice(0, 1) && (
                     <span className={s.firs_letter}>
                       {userInfo.slice(0, 1)}
                     </span>
-                  )}
+                  )
+                }
+                {useravAtarURL.length &&<img src={useravAtarURL} alt="userAvatar" />}
                 </div>
 
                 {userInfo && (

@@ -15,6 +15,7 @@ const CardUser = ({ contact, closeModal }) => {
   return (
     <div className={s.card}>
       <div className={s.usercard}>
+        <img src={contact.avatarURL} alt="avatar" />
         <p className={s.card__name}>{contact.name}</p>
         <p className={s.card__email}>{contact.email}</p>
         <p className={s.card__phone}>{contact.phone}</p>

@@ -47,9 +47,12 @@ const UsersPage = () => {
             id={user.email}
             onClick={(e) => handleOpenModal(e)}
           >
-            <p className={s.text__name}>{user.name}</p>
+            <img className={s.image} src={user.avatarURL} alt="" />
+           <div className={s.list__info}>
+           <p className={s.text__name}>{user.name}</p>
             <p className={s.text__email}>{user.email}</p>
             <p className={s.text__phone}>{user.phone}</p>
+           </div>
           </li>
         ))}
       </ul>

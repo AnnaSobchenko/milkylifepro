@@ -117,6 +117,7 @@
 }
 .name_wrapper {
   width: 33px;
+ 
   @media screen and (min-width: 768px) {
     display: flex;
     align-items: center;
@@ -127,6 +128,7 @@
 .letter_wrapper {
   width: 33px;
   height: 33px;
+  overflow: hidden;
   border-radius: 50%;
   background-color: var(--modal-bg-color);
   display: flex;

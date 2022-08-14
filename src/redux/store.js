@@ -13,9 +13,9 @@ import {
 import storage from "redux-persist/lib/storage";
 import authReducer from "./auth/authSlice";
 import usersReducer from "./user/userSlice";
+import pricesReducer from "./prices/pricesSlice";
 import themeReducer from "./theme/themeSlice";
 import langReducer from "./lang/langSlice";
-import adminReducer from "./admin/adminSlice";
 
 const authPersistConfig = {
   key: "auth",
@@ -28,15 +28,18 @@ const usersPersistConfig = {
   storage,
   whitelist: ["users"],
 };
-
-const adminPersistConfig = {
-  key: "admin",
+const pricesPersistConfig = {
+  key: "prices",
   storage,
-  whitelist: ["admin"],
+  whitelist: ["prices"],
 };
+
 const authPersistedReducer = persistReducer(authPersistConfig, authReducer);
 const usersPersistedReducer = persistReducer(usersPersistConfig, usersReducer);
-const adminPersistedReducer = persistReducer(adminPersistConfig, adminReducer);
+const pricesPersistedReducer = persistReducer(
+  pricesPersistConfig,
+  pricesReducer
+);
 
 const rootPersistConfig = {
   key: "root",
@@ -47,7 +50,7 @@ const rootPersistConfig = {
 const rootReducer = combineReducers({
   auth: authPersistedReducer,
   users: usersPersistedReducer,
-  admin: adminPersistedReducer,
+  prices: pricesPersistedReducer,
   theme: themeReducer,
   lang: langReducer,
 });

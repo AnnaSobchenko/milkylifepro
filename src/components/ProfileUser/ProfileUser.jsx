@@ -9,6 +9,9 @@ const ProfileUser = ({ content, closeModal }) => {
         <Svg name="close" isAllView={true} />
       </button>
       <div className={s.usercard}> 
+      <div className={s.userimage}>
+        <img src={content.avatarURL} alt="avatar" />
+        </div> 
      
         <p className={s.card__name}>{content.name}</p>
         <p className={s.card__email}>{content.email}</p>

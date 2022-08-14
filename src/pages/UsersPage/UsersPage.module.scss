@@ -10,13 +10,23 @@
     gap: 25px;
     grid-template-columns: repeat(2, 1fr);
     padding: 20px 0;
+    &__info{
+      padding: 10px;
+    }
     li {
       border: 1px solid var(--check-color);
       border-radius: 5px;
       padding: 10px;
+      display: flex;     
+      box-shadow: var(--box-shadow-color) 2px 2px 2px; 
       &:hover {
         cursor: pointer;
         box-shadow: var(--box-shadow-color) 0px 6px 10px;
+      }
+
+      .image{
+        border-radius: 5px;
+        box-shadow: var(--box-shadow-color) 1px 1px 5px;
       }
 
       .text {

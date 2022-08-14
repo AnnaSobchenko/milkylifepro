@@ -1,5 +1,6 @@
 export const getUserProfile = (state) => state.auth.user;
 export const getUserEmail = (state) => state.auth.user.email;
+export const getUseravAtarURL = (state) => state.auth.user.avatarURL;
 export const getUserName = (state) => state.auth.user.name;
 export const getIsErrorAuth = (state) => state.auth.error;
 export const getIsLoading = (state) => state.auth.isLoading;
