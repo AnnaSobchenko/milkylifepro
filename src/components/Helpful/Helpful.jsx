@@ -1,6 +1,6 @@
 import s from "./Helpful.module.scss";
 
-const Photo = require("../../images/photo.png");
+const Photo = require("../../images/foto2.jpg");
 
 const Helpful = () => {
   return (

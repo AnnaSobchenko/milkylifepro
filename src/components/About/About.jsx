@@ -1,6 +1,6 @@
 import s from "./About.module.scss";
 
-const Photo = require("../../images/photo.png");
+const Photo = require("../../images/foto1.jpg");
 
 const About = () => {
     return ( 
