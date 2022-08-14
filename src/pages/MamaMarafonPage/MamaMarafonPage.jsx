@@ -1,9 +1,13 @@
 import s from "./MamaMarafonPage.module.scss";
 
+import Icons from "../../images/symbol-defs.svg";
+
 const MamaMarafonPage = () => {
   return (
     <div className={`container ${s.mamamarafon}`}>
       <div>
+        <h2>Їжа, йога, грудне вигодовування та стиль для мами</h2>
+        <p>Все, щоб ви почувалися на мільйон в одному флаконі</p>
         <h2>Мамо, марафон!</h2>
         <p>
           Дівчата, спеціально для вас розробили супер програму для вагітних і
@@ -46,6 +50,16 @@ const MamaMarafonPage = () => {
           <li>Отримаєте підтримку і впевненість у своїх силах, як мами</li>
         </ul>
       </div>
+      <div className="line"></div>
+      <a
+        rel="noopener noreferrer"
+        target="_blank"
+        href="https://t.me/Olesia_Foremna"
+      > &nbsp;
+        <svg className={s.navIcon_telegram} width="23px" height="23px">
+          <use xlinkHref={`${Icons}#icon-telegram`} />
+        </svg>
+      </a>
     </div>
   );
 };
