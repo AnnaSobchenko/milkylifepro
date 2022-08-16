@@ -20,6 +20,28 @@ const LoginPage = () => {
         enableMultiContainer
         containerId={"A"}
       />
+      <ToastContainer
+        position={toast.POSITION.TOP_CENTER}
+        autoClose={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        enableMultiContainer
+        containerId={"C"}
+      />
+      <ToastContainer
+        position={toast.POSITION.TOP_CENTER}
+        autoClose={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        enableMultiContainer
+        containerId={"D"}
+      />
       
       <AuthForm isAuth={false} />
       <p>

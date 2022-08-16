@@ -6,6 +6,8 @@ import {
   getUserInfo,
   refreshUserTokenApi,
 } from "../../utils/fetchApi";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const signup = createAsyncThunk(
   "auth/signup",
@@ -13,8 +15,16 @@ export const signup = createAsyncThunk(
     const { confirmPassword, ...rest } = userData;
     try {
       const data = await signupUserApi(rest);
+      toast.success(
+        "A letter has been sent to your e-mail address, follow the link in the letter",
+        { containerId: "A" }
+      );
       return data;
     } catch (error) {
+      toast.error(
+        `Користувач з таким email вже зареєстровано. ${error.message}`,
+        { containerId: "D" }
+      );
       return thunkApi.rejectWithValue(error.message);
     }
   }
@@ -27,6 +37,10 @@ export const signin = createAsyncThunk(
       const data = await signinUserApi(userData);
       return data;
     } catch (error) {
+      toast.error(
+        `Невірний email або пароль, ${error.message}`,
+        { containerId: "C" }
+      );
       return thunkApi.rejectWithValue(error.message);
     }
   }
