@@ -1,6 +1,6 @@
 .users {
   min-height: calc(100vh - 51px - 56px);
-  margin-top:51px;
+  margin-top: 51px;
   @media screen and (min-width: 768px) {
     margin-top: 70px;
     min-height: calc(100vh - 70px - 56px);
@@ -8,25 +8,46 @@
   .list {
     display: grid;
     gap: 25px;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     padding: 20px 0;
-    &__info{
-      padding: 10px;
+    @media screen and (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (min-width: 1280px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    &__info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @media screen and (min-width: 480px) {
+        align-items: flex-start;
+        justify-content: space-between;
+      }
     }
     li {
       border: 1px solid var(--check-color);
       border-radius: 5px;
       padding: 10px;
-      display: flex;     
-      box-shadow: var(--box-shadow-color) 2px 2px 2px; 
+      @media screen and (min-width: 480px) {
+        display: flex;
+      }
+
+      overflow: hidden;
+      box-shadow: var(--box-shadow-color) 2px 2px 2px;
       &:hover {
         cursor: pointer;
         box-shadow: var(--box-shadow-color) 0px 6px 10px;
       }
 
-      .image{
+      .image {
         border-radius: 5px;
         box-shadow: var(--box-shadow-color) 1px 1px 5px;
+        margin: 0 auto;
+        @media screen and (min-width: 480px) {
+          margin: 0;
+          margin-right: 30px;
+        }
       }
 
       .text {

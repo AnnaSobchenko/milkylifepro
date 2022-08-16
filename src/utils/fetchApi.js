@@ -18,15 +18,8 @@ export async function signinUserApi(userData) {
 }
 
 export async function signupUserApi(userData) {
-  await axios.post("/api/users/signup", userData);
-  const { name, email, phone, password } = userData;
-  const data = signinUserApi({
-    name,
-    email,
-    phone,
-    password,
-  });
-  return data;
+  await axios.post("/api/users/signup", userData); 
+  return
 }
 
 export async function logoutUserApi(persistedToken) {

@@ -76,7 +76,6 @@ const AuthForm = ({ isAuth }) => {
               <NavLink
                 to="/login"
                 onClick={() => {
-                 
                   dispatch(!isAuth ? signin(values) : signup(values));
                 }}
               >

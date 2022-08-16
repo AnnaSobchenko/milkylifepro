@@ -22,19 +22,19 @@ const authSlice = createSlice({
     error: null,
   },
   reducers: {
-    logoutUser(state) {
-      state.user = { email: null };
-      state.token = null;
-      state.refreshToken = null;
-      state._id = null;
-      state.isLoggedIn = false;
-      state.isLoading = false;
-      state.error = null;
-      state.isAdmin = false;
-    },
-    addIsAdmin(state) {
-      state.isAdmin = true;
-    },
+    // logoutUser(state) {
+    //   state.user = { email: null };
+    //   state.token = null;
+    //   state.refreshToken = null;
+    //   state._id = null;
+    //   state.isLoggedIn = false;
+    //   state.isLoading = false;
+    //   state.error = null;
+    //   state.isAdmin = false;
+    // },
+    // addIsAdmin(state) {
+    //   state.isAdmin = true;
+    // },
   },
   extraReducers: {
     // SIGN UP
@@ -43,11 +43,11 @@ const authSlice = createSlice({
       state.error = null;
     },
     [signup.fulfilled](state, { payload }) {
-      state.user.email = payload.email;
-      state.token = payload.token;
-      state.refreshToken = payload.refreshToken;
-      state._id = payload._id;
-      state.isLoggedIn = true;
+      // state.user.email = payload.email;
+      // state.token = payload.token;
+      // state.refreshToken = payload.refreshToken;
+      // state._id = payload._id;
+      state.isLoggedIn = false;
       state.isLoading = false;
     },
     [signup.rejected](state, { payload }) {

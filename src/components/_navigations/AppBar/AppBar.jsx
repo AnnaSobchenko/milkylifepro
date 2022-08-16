@@ -26,7 +26,6 @@ const AppBar = () => {
   const isLoggedIn = useSelector(getIsLoggedIn);
   const dispatch = useDispatch();
   const isAdmin = useSelector(getIsAdmin);
-  // const users = useSelector(getUsers);
   const [modal, setModal] = useState({
     open: false,
     content: null,
@@ -66,7 +65,7 @@ const AppBar = () => {
             to="/mama-marafon"
             className={({ isActive }) => (isActive ? s.activeStyle : s.link)}
           >
-            <p>Мама-марафон</p>
+            <p>Мамо, марафон!</p>
             <Svg name="marafon" />
           </NavLink>{" "}
           {isAdmin && (
@@ -85,9 +84,7 @@ const AppBar = () => {
             <NavLink
               to="/login"
               className={({ isActive }) => (isActive ? s.activeStyle : s.link)}
-            >
-              {/* <p>&#9032;</p> */}
-              {/* <Svg name="login" /> */}
+            >              
               <svg className={s.navIcon_signOut} width="23px" height="23px">
                 <use xlinkHref={`${Icons}#icon-login`} />
               </svg>

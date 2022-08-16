@@ -21,10 +21,14 @@ export const signup = createAsyncThunk(
       );
       return data;
     } catch (error) {
-      toast.error(
-        `Користувач з таким email вже зареєстровано. ${error.message}`,
-        { containerId: "D" }
-      );
+      error.response.status === 409
+        ? toast.error(
+            `Користувач з таким email вже зареєстровано. ${error.message}`,
+            { containerId: "D" }
+          )
+        : toast.error(`Помилка реєстрації. ${error.message}`, {
+            containerId: "D",
+          });
       return thunkApi.rejectWithValue(error.message);
     }
   }
@@ -37,10 +41,9 @@ export const signin = createAsyncThunk(
       const data = await signinUserApi(userData);
       return data;
     } catch (error) {
-      toast.error(
-        `Невірний email або пароль, ${error.message}`,
-        { containerId: "C" }
-      );
+      toast.error(`Невірний email або пароль, ${error.message}`, {
+        containerId: "C",
+      });
       return thunkApi.rejectWithValue(error.message);
     }
   }
