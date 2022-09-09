@@ -15,7 +15,6 @@ import SwitchTheme from "../../SwitchTheme/SwitchTheme";
 import Svg from "../../_shared/Svg/Svg";
 import ProfileUser from "../../ProfileUser/ProfileUser";
 import Modal from "../../Modal/Modal";
-// import SwitchLang from "../SwitchLang/SwitchLang";
 
 const Logo = require("../../../images/logo.png");
 

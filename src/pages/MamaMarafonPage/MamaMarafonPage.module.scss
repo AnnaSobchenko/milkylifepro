@@ -1,14 +1,79 @@
 .mamamarafon {
   min-height: calc(100vh - 51px - 56px);
-  margin-top:51px;
+  margin-top: 51px;
   @media screen and (min-width: 768px) {
     margin-top: 70px;
     min-height: calc(100vh - 70px - 56px);
   }
- h2{
-  padding: 10px;
- }
-  li{
+  h2 {
+    padding: 10px;
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1.3rem;
+  }
+  li {
     list-style: circle;
+  }
+  .hero {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    justify-content: center;
+  }
+  .options {
+    display: flex;
+    text-align: center;
+    p {
+      margin-bottom: 20px;
+    }
+    ul {
+      text-align: left;
+    }
+
+    &__describe {
+      padding: 50px;
+    }
+  }
+  li {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+  .img {
+    margin-right: 30px;
+  }
+  .about {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    justify-content: center;
+    p {
+      font-size: 2rem;
+    }
+  }
+  .recived{
+    padding: 50px;
+  }
+}
+.telegram {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+
+  box-shadow: 5px 5px 5px var(--shadow-color),  2px 2px 15px var(--shadow-color);
+  position: fixed;
+  bottom: 75px;
+  right: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  svg{
+    fill:var(--accent-button-color);
   }
 }
