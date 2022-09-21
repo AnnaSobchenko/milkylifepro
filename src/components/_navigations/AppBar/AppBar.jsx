@@ -66,7 +66,14 @@ const AppBar = () => {
           >
             <p>Мамо, марафон!</p>
             <Svg name="marafon" />
-          </NavLink>{" "}
+          </NavLink>
+          <NavLink
+            to="/reviews"
+            className={({ isActive }) => (isActive ? s.activeStyle : s.link)}
+          >
+            <p>Відгуки</p>
+            {/* <Svg name="marafon" /> */}
+          </NavLink>
           {isAdmin && (
             <NavLink
               to="/users"

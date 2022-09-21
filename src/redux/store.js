@@ -14,6 +14,7 @@ import storage from "redux-persist/lib/storage";
 import authReducer from "./auth/authSlice";
 import usersReducer from "./user/userSlice";
 import pricesReducer from "./prices/pricesSlice";
+import reviewsReducer from "./reviews/reviewsSlice";
 import themeReducer from "./theme/themeSlice";
 import langReducer from "./lang/langSlice";
 
@@ -33,12 +34,21 @@ const pricesPersistConfig = {
   storage,
   whitelist: ["prices"],
 };
+const reviewsPersistConfig = {
+  key: "reviews",
+  storage,
+  whitelist: ["reviews"],
+};
 
 const authPersistedReducer = persistReducer(authPersistConfig, authReducer);
 const usersPersistedReducer = persistReducer(usersPersistConfig, usersReducer);
 const pricesPersistedReducer = persistReducer(
   pricesPersistConfig,
   pricesReducer
+);
+const reviewsPersistedReducer = persistReducer(
+  reviewsPersistConfig,
+  reviewsReducer
 );
 
 const rootPersistConfig = {
@@ -51,6 +61,7 @@ const rootReducer = combineReducers({
   auth: authPersistedReducer,
   users: usersPersistedReducer,
   prices: pricesPersistedReducer,
+  reviews: reviewsPersistedReducer,
   theme: themeReducer,
   lang: langReducer,
 });

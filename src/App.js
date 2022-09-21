@@ -21,6 +21,7 @@ import Footer from "./components/_navigations/Footer/Footer";
 import { getTheme } from "./redux/theme/themeSelector";
 import UsersPage from "./pages/UsersPage/UsersPage";
 import MamaMarafonPage from "./pages/MamaMarafonPage/MamaMarafonPage";
+import ReviewsPage from "./pages/ReviewsPage/ReviewsPage";
 
 function App() {
   const isAdmin = useSelector(getIsAdmin);
@@ -49,6 +50,7 @@ function App() {
           <Route path="/" element={<AppBar />}>
             <Route index element={<MainPage />} />
             <Route path="/mama-marafon" element={<MamaMarafonPage />} />
+            <Route path="/reviews" element={<ReviewsPage />} />
             <Route element={<PublicRoute />}>
               <Route path="login" element={<LoginPage />} />
               <Route path="register" element={<RegisterPage />} />

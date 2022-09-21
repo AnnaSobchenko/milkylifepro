@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import s from "./Price.module.scss";
 import { getAllPrices } from "../../redux/prices/pricesSelector";
 const uuid = require("uuid");
-// const Prices = require("../../utils/price.json");
 
 const Price = () => {
   const isLoggedIn = useSelector(getIsLoggedIn);

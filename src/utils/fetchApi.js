@@ -59,3 +59,8 @@ export async function getPricesApi() {
   const { data } = await axios.get("/api/prices");
   return data;
 }
+
+export async function getReviewsApi() {
+  const { data } = await axios.get("/api/reviews");
+  return data;
+}

@@ -57,7 +57,7 @@
       font-size: 2rem;
     }
   }
-  .recived{
+  .recived {
     padding: 50px;
   }
 }
@@ -66,14 +66,14 @@
   height: 70px;
   border-radius: 50%;
 
-  box-shadow: 5px 5px 5px var(--shadow-color),  2px 2px 15px var(--shadow-color);
+  box-shadow: 5px 5px 5px var(--shadow-color), 2px 2px 15px var(--shadow-color);
   position: fixed;
   bottom: 75px;
   right: 75px;
   display: flex;
   justify-content: center;
   align-items: center;
-  svg{
-    fill:var(--accent-button-color);
+  svg {
+    fill: var(--accent-button-color);
   }
 }
