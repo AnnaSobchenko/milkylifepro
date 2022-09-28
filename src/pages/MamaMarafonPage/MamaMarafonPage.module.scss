@@ -27,6 +27,10 @@
   .options {
     display: flex;
     text-align: center;
+    flex-direction: column;
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+    }
     p {
       margin-bottom: 20px;
     }
@@ -35,7 +39,10 @@
     }
 
     &__describe {
-      padding: 50px;
+      padding: 20px;
+      @media screen and (min-width: 768px) {
+        padding: 50px;
+      }
     }
   }
   li {
@@ -44,6 +51,7 @@
   }
   .img {
     margin-right: 30px;
+    margin: 0 auto;
   }
   .about {
     height: 300px;
@@ -51,14 +59,18 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-
     justify-content: center;
+    color: var(--accent-color);
+    font-weight: bold;
     p {
       font-size: 2rem;
     }
   }
   .recived {
-    padding: 50px;
+    padding: 20px;
+      @media screen and (min-width: 768px) {
+        padding: 50px;
+      }
   }
 }
 .telegram {

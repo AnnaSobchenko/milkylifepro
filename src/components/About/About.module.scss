@@ -5,36 +5,31 @@
   gap: 25px;
   align-items: center;
   justify-items: center;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1280px) {
     grid-template-columns: repeat(2, 1fr);
+    justify-items: end;
   }
 
-  a{
-    
+  .text {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 14px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    @media screen and (min-width: 768px) {
+      font-size: 1.3rem;
+      margin-bottom: 24px;
+    }
+    &__list {
+      p {
+        margin-bottom: 10px;
+      }
+    }
   }
-  
-
-.text {
-  font-size: 1.1rem;
-  font-weight: 400;
-  margin-bottom: 14px;
-  &:last-child {
-    margin-bottom: 0;
-}
-  @media screen and (min-width: 768px) {
-    font-size: 1.3rem;
-    margin-bottom: 24px; 
-   
+  .img {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 2px 4px 2px var(--shadow-color);
   }
-  &__list {
-    p {
-      margin-bottom: 10px;
-     
-  }
-}}
-.img{
-  border-radius: 10px;
-  overflow: hidden ;
-  box-shadow: 2px 4px 2px var(--shadow-color);
-}
 }

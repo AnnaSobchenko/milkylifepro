@@ -11,6 +11,12 @@ const MamaMarafonPage = () => {
           <h2>Їжа, йога, грудне вигодовування та стиль для мами</h2>
           <p>Все, щоб ви почувалися на мільйон, в одному флаконі!</p>
         </div>
+      <div className={s.about}>
+        <p>4 тижні підтримки для кожної мами</p>
+        <p>5 важливих тем</p>
+        <p>18 відеолекцій</p>
+        <p>+ індивідуальна підтримка від кураторки</p>
+      </div>
         <div className={s.options}>
           <div className={s.img}>
             <img src={Photo} alt="replacePhoto" width={550} />
@@ -33,14 +39,7 @@ const MamaMarafonPage = () => {
           </div>
         </div>
       </div>
-      {/* <div className="line"></div> */}
-      <div className={s.about}>
-        <p>4 тижні підтримки для кожної мами</p>
-        <p>5 важливих тем</p>
-        <p>18 відеолекцій</p>
-        <p>+ індивідуальна підтримка від кураторки</p>
-      </div>
-      {/* <div className="line"></div> */}
+     
       <div className={s.recived}>
         <h2>Ви отримаєте</h2>
         <ul>

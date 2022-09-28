@@ -2,6 +2,7 @@ import { getIsLoggedIn } from "../../redux/auth/authSelector";
 import { useSelector } from "react-redux";
 import s from "./Price.module.scss";
 import { getAllPrices } from "../../redux/prices/pricesSelector";
+import { NavLink } from "react-router-dom";
 const uuid = require("uuid");
 
 const Price = () => {
@@ -31,8 +32,18 @@ const Prices=useSelector(getAllPrices)
         })}
       </ul>}
       {!isLoggedIn && (
-        <p className={s.small}>* Знижка 10% зареєстрованим користувачам</p>
+        <p className={s.small}>
+          * Знижка 10% зареєстрованим користувачам &#8680;
+          <NavLink to="/register">
+        Рєєстрація
+      </NavLink>
+       &nbsp;або&nbsp;
+          <NavLink to="/login">
+        Увійти
+      </NavLink>
+        </p>
       )}
+      
     </section>
   );
 };

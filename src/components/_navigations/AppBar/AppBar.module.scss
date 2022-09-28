@@ -70,6 +70,10 @@
   .link {
     color: inherit;
     font-weight: 500;
+    font-size: 1.1rem;
+    &:hover {
+      color: var(--text-color);
+    }
 
     @media screen and (min-width: 768px) {
       margin-right: 50px;
@@ -103,9 +107,12 @@
   }
 
   .activeStyle {
-    color: inherit;
-    cursor: default;
+    color: inherit;   
+    font-size: 1.1rem;
     border-bottom: 1px solid var(--accent-nav-color);
+    &:hover {
+      color: var(--text-color);
+    }
 
     @media screen and (min-width: 768px) {
       margin-right: 50px;
@@ -117,7 +124,7 @@
 }
 .name_wrapper {
   width: 33px;
- 
+
   @media screen and (min-width: 768px) {
     display: flex;
     align-items: center;
@@ -192,7 +199,6 @@
 .navIcon_signOut {
   display: flex;
   fill: var(--accent-nav-color);
-  
 }
 
 .text_transform {

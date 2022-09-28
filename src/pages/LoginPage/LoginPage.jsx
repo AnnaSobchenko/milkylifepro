@@ -44,7 +44,7 @@ const LoginPage = () => {
       />
       
       <AuthForm isAuth={false} />
-      <p>
+      <p className={s.reglog}>
         Ще не зареєстровані? &#10233;
         <NavLink to="/register"> Реєстрація </NavLink>
       </p>

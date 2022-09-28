@@ -31,7 +31,7 @@ const AuthForm = ({ isAuth }) => {
         <div className={s.authForm}>
           <h2 className={s.authFormTitle2}>
             {isAuth ? "Registration:" : "Login:"}
-          </h2>
+          </h2>          
           <form onSubmit={handleSubmit} className={s.authFormInput}>
             {isAuth && (
               <>
@@ -62,11 +62,12 @@ const AuthForm = ({ isAuth }) => {
               values={values}
             />
             {isAuth && (
-              <p>
+              <p className={s.text__aprove}>
                 Натискаючи на кнопку, ви даєте згоду на обробку персональних
                 даних
               </p>
             )}
+           
             <div
               className={s.btn}
               style={{

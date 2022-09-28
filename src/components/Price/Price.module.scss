@@ -20,14 +20,18 @@
     grid-template-columns: repeat(1, 1fr);
     margin-bottom: 10px;
     @media screen and (min-width: 768px) {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, 1fr);      
+    }
+    @media screen and (min-width: 1280px) {
+      gap: 50px;
     }
   }
   .item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 300px;
+    min-height: 250px;
+    height: 25vh;
     background-color: var(--second-bg-color);
     justify-content: space-between;
     padding: 20px;
@@ -35,7 +39,11 @@
     box-shadow: 2px 4px 2px var(--shadow-color);
     font-size: 1.4rem;
     @media screen and (min-width: 768px) {
-      height: 65vh;
+      height: 75vh;
+      min-height: 350px;
+    }
+    @media screen and (min-width: 1280px) {
+      height: 55vh;
       min-height: 300px;
     }
 
