@@ -1,5 +1,4 @@
 import s from "./MamaMarafonPage.module.scss";
-
 import Icons from "../../images/symbol-defs.svg";
 const Photo = require("../../images/marafon.png");
 
@@ -58,8 +57,7 @@ const MamaMarafonPage = () => {
           </li>
           <li>Отримаєте підтримку і впевненість у своїх силах, як мами</li>
         </ul>
-      </div>
-      {/* <div className="line"></div> */}
+      </div>      
       <a
         className={s.telegram}
         rel="noopener noreferrer"

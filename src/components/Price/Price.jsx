@@ -7,43 +7,40 @@ const uuid = require("uuid");
 
 const Price = () => {
   const isLoggedIn = useSelector(getIsLoggedIn);
-const Prices=useSelector(getAllPrices)
+  const Prices = useSelector(getAllPrices);
 
   return (
     <section className={`container ${s.price}`} id="price">
       <h2 className={s.title}>Послуги та ціни</h2>
-      {Prices.length&& <ul className={s.list}>
-        {Prices.map((el) => {
-          const { title, price, online, description, period } = el;
-          let priceForUser = Math.floor((Number(price) / 100) * 9) * 10;
-          return (
-            <li className={s.item} key={uuid.v4()}>
-              <h3 className={s.item__title}>{title}</h3>
-              <p className={s.item__online}>{online}</p>
-              <p className={s.item__online}>{period}</p>
-              <p className={s.item__description}>{description}</p>
-              {isLoggedIn ? (
-                <p className={s.item__price}> {priceForUser} грн</p>
-              ) : (
-                <p className={s.item__price}> {price} грн*</p>
-              )}
-            </li>
-          );
-        })}
-      </ul>}
+      {Prices.length && (
+        <ul className={s.list}>
+          {Prices.map((el) => {
+            const { title, price, online, description, period } = el;
+            let priceForUser = Math.floor((Number(price) / 100) * 9) * 10;
+            return (
+              <li className={s.item} key={uuid.v4()}>
+                <h3 className={s.item__title}>{title}</h3>
+                <p className={s.item__online}>{online}</p>
+                <p className={s.item__online}>{period}</p>
+                <p className={s.item__description}>{description}</p>
+                {isLoggedIn ? (
+                  <p className={s.item__price}> {priceForUser} грн</p>
+                ) : (
+                  <p className={s.item__price}> {price} грн*</p>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      )}
       {!isLoggedIn && (
         <p className={s.small}>
           * Знижка 10% зареєстрованим користувачам &#8680;
-          <NavLink to="/register">
-        Рєєстрація
-      </NavLink>
-       &nbsp;або&nbsp;
-          <NavLink to="/login">
-        Увійти
-      </NavLink>
+          <NavLink to="/register">Рєєстрація</NavLink>
+          &nbsp;або&nbsp;
+          <NavLink to="/login">Увійти</NavLink>
         </p>
       )}
-      
     </section>
   );
 };

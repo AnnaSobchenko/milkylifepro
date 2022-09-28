@@ -19,10 +19,14 @@
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
+    border: 1px solid var(--check-color);
     box-shadow: 5px 5px 5px var(--shadow-color),
       2px -2px 5px var(--shadow-color), -2px 2px 5px var(--shadow-color);
     .item__user {
       font-weight: 700;
+    }
+    p {
+      font-size: 1.2rem;
     }
   }
   li:nth-child(2n) {
