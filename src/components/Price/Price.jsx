@@ -12,6 +12,7 @@ const Price = () => {
   return (
     <section className={`container ${s.price}`} id="price">
       <h2 className={s.title}>Послуги та ціни</h2>
+      <p className={s.text__lang}>Консультація надається українською або англійською мовою</p>
       {Prices.length && (
         <ul className={s.list}>
           {Prices.map((el) => {

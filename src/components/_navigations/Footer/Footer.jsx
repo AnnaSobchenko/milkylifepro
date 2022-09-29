@@ -4,6 +4,7 @@ import Icons from "../../../images/symbol-defs.svg";
 const Footer = () => {
   return (
     <footer className={s.footerContainer}>
+     <div>     
       <a
         className={s.telegram}
         rel="noopener noreferrer"
@@ -34,6 +35,7 @@ const Footer = () => {
           <use xlinkHref={`${Icons}#icon-instagram`} />
         </svg>
       </a>
+      </div> 
       <p>© 2022 | All Rights Reserved |&nbsp;</p>
       <p>
         Milky Life Pro
