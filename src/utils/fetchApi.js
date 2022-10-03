@@ -64,3 +64,19 @@ export async function getReviewsApi() {
   const { data } = await axios.get("/api/reviews");
   return data;
 }
+
+export async function addReviewApi() {
+  const { data } = await axios.post("/api/reviews/newreview");
+  return data;
+}
+
+export async function approveReviewApi(id) {
+  console.log('id fetch:>> ', id);
+  const { data } = await axios.post(`/api/reviews/isapprove/${id}`);
+  return data;
+}
+
+export async function removeReviewApi(id) {
+  const { data } = await axios.post(`/api/reviews/${id}`);
+  return data;
+}

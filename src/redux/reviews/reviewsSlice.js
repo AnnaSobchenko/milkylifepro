@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getReviews } from "./reviewsOperations";
+import { approveReview, getReviews } from "./reviewsOperations";
 
 const reviewsSlice = createSlice({
   name: "reviews",
@@ -20,6 +20,16 @@ const reviewsSlice = createSlice({
       state.reviews = [...payload];
     },
     [getReviews.rejected](state, { payload }) {
+      state.error = payload;
+    },
+    //approveReview
+    [approveReview.pending](state) {
+      state.error = null;
+    },
+    [approveReview.fulfilled](state, { payload }) {
+     
+    },
+    [approveReview.rejected](state, { payload }) {
       state.error = payload;
     },
   },

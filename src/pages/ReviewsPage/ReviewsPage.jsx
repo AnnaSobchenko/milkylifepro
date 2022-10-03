@@ -5,7 +5,10 @@ import {
   getIsLoggedIn,
   getUserProfile,
 } from "../../redux/auth/authSelector";
-import { getReviews } from "../../redux/reviews/reviewsOperations";
+import {
+  approveReview,
+  getReviews,
+} from "../../redux/reviews/reviewsOperations";
 import { getAllReviews } from "../../redux/reviews/reviewsSelector";
 import s from "./ReviewsPage.module.scss";
 import { Formik } from "formik";
@@ -20,6 +23,13 @@ const ReviewsPage = () => {
   const renderForm = () => {
     setIsShow((prev) => !prev);
   };
+
+  const approveReviewAdmin = (e) => {
+    console.log("e.target.value :>> ", e.target.value);
+     dispatch(approveReview(e.target.value));
+     dispatch(getReviews());
+  };
+
   useEffect(() => {
     dispatch(getReviews());
   }, []);
@@ -35,7 +45,13 @@ const ReviewsPage = () => {
                 <p className={s.item__user}>{el.user}</p>
                 {isAdmin && !el.isApprove && (
                   <div className={s.adminAprove}>
-                    <button type="button">Погодити відгук</button>
+                    <button
+                      type="button"
+                      value={el._id}
+                      onClick={(e) =>approveReviewAdmin(e)}
+                    >
+                      Погодити відгук
+                    </button>
                     <button type="button">Видалити відгук</button>
                   </div>
                 )}
