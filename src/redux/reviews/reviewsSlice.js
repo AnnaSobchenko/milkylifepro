@@ -1,5 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { approveReview, getReviews } from "./reviewsOperations";
+import {
+  addReviews,
+  approveReview,
+  getReviews,
+  removeReview,
+} from "./reviewsOperations";
 
 const reviewsSlice = createSlice({
   name: "reviews",
@@ -22,14 +27,28 @@ const reviewsSlice = createSlice({
     [getReviews.rejected](state, { payload }) {
       state.error = payload;
     },
+    // addReviews
+    [addReviews.pending](state) {
+      state.error = null;
+    },
+    [addReviews.fulfilled](state, { payload }) {},
+    [addReviews.rejected](state, { payload }) {
+      state.error = payload;
+    },
     //approveReview
     [approveReview.pending](state) {
       state.error = null;
     },
-    [approveReview.fulfilled](state, { payload }) {
-     
-    },
+    [approveReview.fulfilled](state, { payload }) {},
     [approveReview.rejected](state, { payload }) {
+      state.error = payload;
+    },
+    //removeReview
+    [removeReview.pending](state) {
+      state.error = null;
+    },
+    [removeReview.fulfilled](state, { payload }) {},
+    [removeReview.rejected](state, { payload }) {
       state.error = payload;
     },
   },

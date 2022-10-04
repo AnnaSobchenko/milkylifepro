@@ -1,6 +1,11 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-import { addReviewApi, approveReviewApi, getReviewsApi, removeReviewApi } from "../../utils/fetchApi";
+import {
+  addReviewApi,
+  approveReviewApi,
+  getReviewsApi,
+  removeReviewApi,
+} from "../../utils/fetchApi";
 
 export const getReviews = createAsyncThunk(
   "reviews/get",
@@ -49,4 +54,3 @@ export const removeReview = createAsyncThunk(
     }
   }
 );
-

@@ -18,8 +18,8 @@ export async function signinUserApi(userData) {
 }
 
 export async function signupUserApi(userData) {
-  await axios.post("/api/users/signup", userData); 
-  return
+  await axios.post("/api/users/signup", userData);
+  return;
 }
 
 export async function logoutUserApi(persistedToken) {
@@ -65,18 +65,17 @@ export async function getReviewsApi() {
   return data;
 }
 
-export async function addReviewApi() {
-  const { data } = await axios.post("/api/reviews/newreview");
+export async function addReviewApi(userData) {
+  const { data } = await axios.post("/api/reviews/newreview", userData);
   return data;
 }
 
 export async function approveReviewApi(id) {
-  console.log('id fetch:>> ', id);
   const { data } = await axios.post(`/api/reviews/isapprove/${id}`);
   return data;
 }
 
 export async function removeReviewApi(id) {
-  const { data } = await axios.post(`/api/reviews/${id}`);
+  const { data } = await axios.delete(`/api/reviews/${id}`);
   return data;
 }
