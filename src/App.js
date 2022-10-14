@@ -32,8 +32,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("token", token);
-    if (token.length && !isLoggedIn) dispatch(refreshUserToken());
+    if (Boolean(token) && !isLoggedIn) dispatch(refreshUserToken());
   }, []);
 
   return (

@@ -88,7 +88,6 @@ const authSlice = createSlice({
       state.error = null;
     },
     [refreshUserToken.fulfilled](state, { payload }) {
-      console.log('payload', payload)
       state.isLoggedIn = true;
       state.isLoading = false;
       state.token = payload.token;

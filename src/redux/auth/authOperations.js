@@ -80,7 +80,6 @@ export const refreshUserToken = createAsyncThunk(
 
     try {
       const data = await refreshUserTokenApi({ persistedToken });
-      console.log('data oper', data)
       return data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
