@@ -3,8 +3,8 @@ import {
   signinUserApi,
   logoutUserApi,
   signupUserApi,
-  getUserInfo,
   refreshUserTokenApi,
+  getUserInfoApi,
 } from "../../utils/fetchApi";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -53,7 +53,7 @@ export const getInfo = createAsyncThunk(
   "auth/current",
   async (userInfo, thunkApi) => {
     try {
-      const data = await getUserInfo(userInfo);
+      const data = await getUserInfoApi(userInfo);
       return data.user.email;
     } catch (error) {
       return thunkApi.rejectWithValue("No user data :(");
@@ -71,16 +71,16 @@ export const logout = createAsyncThunk("auth/logout", async (_, thunkApi) => {
   }
 });
 
-export const getNewTokens = createAsyncThunk(
+export const refreshUserToken = createAsyncThunk(
   "auth/refresh",
   async (_, thunkApi) => {
     const state = thunkApi.getState();
     const persistedToken = state.auth.token;
-    console.log("first", persistedToken);
     if (!persistedToken) thunkApi.rejectWithValue();
 
     try {
       const data = await refreshUserTokenApi({ persistedToken });
+      console.log('data oper', data)
       return data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);

@@ -7,13 +7,13 @@ import {
   Navigate,
 } from "react-router-dom";
 
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import Loader from "./components/_shared/Loader/Loader";
 import AppBar from "./components/_navigations/AppBar/AppBar";
 import PrivateRoute from "./components/_routs/PrivatRoute";
 import PublicRoute from "./components/_routs/PublicRoute";
-import { getIsAdmin } from "./redux/auth/authSelector";
+import { getIsAdmin, getIsLoggedIn, getToken } from "./redux/auth/authSelector";
 import MainPage from "./pages/MainPage/MainPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
@@ -22,10 +22,19 @@ import { getTheme } from "./redux/theme/themeSelector";
 import UsersPage from "./pages/UsersPage/UsersPage";
 import MamaMarafonPage from "./pages/MamaMarafonPage/MamaMarafonPage";
 import ReviewsPage from "./pages/ReviewsPage/ReviewsPage";
+import { refreshUserToken } from "./redux/auth/authOperations";
 
 function App() {
   const isAdmin = useSelector(getIsAdmin);
   const theme = useSelector(getTheme);
+  const token = useSelector(getToken);
+  const isLoggedIn = useSelector(getIsLoggedIn);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    console.log("token", token);
+    if (token.length && !isLoggedIn) dispatch(refreshUserToken());
+  }, []);
 
   return (
     <div

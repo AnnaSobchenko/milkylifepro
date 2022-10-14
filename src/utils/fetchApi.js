@@ -1,6 +1,6 @@
 import axios from "axios";
-axios.defaults.baseURL = "https://milkylifepro-rest-api.herokuapp.com/";
-// axios.defaults.baseURL = "http://localhost:3001/";
+// axios.defaults.baseURL = "https://milkylifepro-rest-api.herokuapp.com/";
+axios.defaults.baseURL = "http://localhost:3001/";
 
 const token = {
   set(token) {
@@ -29,7 +29,7 @@ export async function logoutUserApi(persistedToken) {
   return data;
 }
 
-export async function getUserInfo(accessToken) {
+export async function getUserInfoApi(accessToken) {
   if (accessToken) {
     axios.defaults.headers.common.Authorization = `Bearer ${localStorage.getItem(
       "accessToken"
@@ -42,7 +42,6 @@ export async function getUserInfo(accessToken) {
 export async function refreshUserTokenApi({ persistedToken }) {
   token.set(persistedToken);
   const { data } = await axios.get("/api/users/refresh", persistedToken);
-
   return data;
 }
 export async function getAllUsersApi() {

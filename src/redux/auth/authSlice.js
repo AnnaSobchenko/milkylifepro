@@ -4,7 +4,7 @@ import {
   signin,
   signup,
   getInfo,
-  getNewTokens,
+  refreshUserToken,
 } from "./authOperations";
 
 const adminEmail = process.env.REACT_APP_ADMIN_EMAIL;
@@ -21,21 +21,7 @@ const authSlice = createSlice({
     isAdmin: false,
     error: null,
   },
-  reducers: {
-    // logoutUser(state) {
-    //   state.user = { email: null };
-    //   state.token = null;
-    //   state.refreshToken = null;
-    //   state._id = null;
-    //   state.isLoggedIn = false;
-    //   state.isLoading = false;
-    //   state.error = null;
-    //   state.isAdmin = false;
-    // },
-    // addIsAdmin(state) {
-    //   state.isAdmin = true;
-    // },
-  },
+  reducers: {},
   extraReducers: {
     // SIGN UP
     [signup.pending](state) {
@@ -43,10 +29,6 @@ const authSlice = createSlice({
       state.error = null;
     },
     [signup.fulfilled](state, { payload }) {
-      // state.user.email = payload.email;
-      // state.token = payload.token;
-      // state.refreshToken = payload.refreshToken;
-      // state._id = payload._id;
       state.isLoggedIn = false;
       state.isLoading = false;
     },
@@ -101,17 +83,30 @@ const authSlice = createSlice({
     },
 
     // REFRESH
-    [getNewTokens.pending](state) {
+    [refreshUserToken.pending](state) {
       state.isLoading = true;
       state.error = null;
     },
-    [getNewTokens.fulfilled](state, { payload }) {
+    [refreshUserToken.fulfilled](state, { payload }) {
+      console.log('payload', payload)
       state.isLoggedIn = true;
       state.isLoading = false;
       state.token = payload.token;
       state.refreshToken = payload.refreshToken;
+      state.user.email = payload.email;
+      state.user.name = payload.name;
+      state.user.phone = payload.phone;
+      state.user.avatarURL = payload.avatarURL;
+      state.token = payload.token;
+      state.refreshToken = payload.refreshToken;
+      state._id = payload._id;
+      state.isLoggedIn = true;
+      state.isLoading = false;
+      payload.email === adminEmail
+        ? (state.isAdmin = true)
+        : (state.isAdmin = false);
     },
-    [getNewTokens.rejected](state, { payload }) {
+    [refreshUserToken.rejected](state, { payload }) {
       state.isLoading = false;
       state.error = payload;
       state.isLoggedIn = false;
