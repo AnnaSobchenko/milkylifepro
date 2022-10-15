@@ -36,7 +36,7 @@ const Price = () => {
       )}
       {!isLoggedIn && (
         <p className={s.small}>
-          * Знижка 10% зареєстрованим користувачам &#8680;
+          * Знижка 10% зареєстрованим користувачам &#8680; &nbsp;
           <NavLink to="/register">Рєєстрація</NavLink>
           &nbsp;або&nbsp;
           <NavLink to="/login">Увійти</NavLink>

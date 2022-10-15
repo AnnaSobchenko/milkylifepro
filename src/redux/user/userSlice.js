@@ -6,15 +6,11 @@ const usersSlice = createSlice({
   name: "users",
   initialState: {
     users: [],
-    userContact: [],
-    phoneForm: {},
-    filterValue: [],
     error: null,
     isLoading: false,
   },
 
-  reducers: {
-  },
+  reducers: {},
 
   extraReducers: {
     // getAllUsers
@@ -37,10 +33,4 @@ const usersSlice = createSlice({
     },
   },
 });
-export const {
-  onContactUpdate,
-
-  onPhoneFormReset,
-  onFilterValueChange,
-} = usersSlice.actions;
 export default usersSlice.reducer;

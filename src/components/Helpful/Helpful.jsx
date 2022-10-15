@@ -4,7 +4,8 @@ const Photo = require("../../images/foto2.jpg");
 
 const Helpful = () => {
   return (
-    <section className={`container ${s.helpful}`} id="about">
+    <section className={s.section__helpful} id="about">
+      <div className={`container ${s.helpful}`}>
       <div className={s.text__helpful}>
         <h2 className={s.title}>Допоможу</h2>
         <ul className={s.list}>
@@ -19,6 +20,7 @@ const Helpful = () => {
       </div>
       <div className={s.img}>
         <img src={Photo} alt="replacePhoto" width={450} />
+      </div>
       </div>
     </section>
   );

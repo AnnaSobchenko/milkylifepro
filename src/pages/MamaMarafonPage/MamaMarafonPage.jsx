@@ -1,5 +1,6 @@
 import s from "./MamaMarafonPage.module.scss";
 import Icons from "../../images/symbol-defs.svg";
+import WeeksList from "../../components/WeeksList/WeeksList";
 const Photo = require("../../images/marafon.png");
 
 const MamaMarafonPage = () => {
@@ -72,6 +73,7 @@ const MamaMarafonPage = () => {
           </svg>
         </a>
       </div>
+      <WeeksList />
     </section>
   );
 };
