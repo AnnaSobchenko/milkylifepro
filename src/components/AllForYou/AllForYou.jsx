@@ -15,7 +15,7 @@ const AllForYou = () => {
               href="https://t.me/Olesia_Foremna"
             >
               Телеграм
-            </a>{" "}
+            </a>
             і ми все зробимо, щоб вам стало краще
           </li>
           <li>

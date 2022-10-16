@@ -11,7 +11,7 @@ const MamaMarafonPage = () => {
         <h2>Їжа, йога,</h2>
         <h2> грудне вигодовування </h2>
         <h2>та стиль для мами</h2>
-        <p>Все, щоб ви почувалися на мільйон, в одному флаконі!</p>
+        <p className={s.hero__text}>Все, щоб ви почувалися на мільйон, в одному флаконі!</p>
       </div>
       <div className={`container`}>
         <div className={s.about}>
@@ -25,7 +25,7 @@ const MamaMarafonPage = () => {
             <img src={Photo} alt="replacePhoto" width={550} />
           </div>
           <div className={s.options__describe}>
-            <h2>Мамо, марафон!</h2>
+            <h2 >Мамо, марафон!</h2>
             <p>
               Дівчата, спеціально для вас розробили супер програму для вагітних
               і мам, щоб ви:
@@ -43,7 +43,7 @@ const MamaMarafonPage = () => {
         </div>
 
         <div className={s.recived}>
-          <h2>Ви отримаєте</h2>
+          <h2 className={s.mamamarafon__title}>Ви отримаєте</h2>
           <ul>
             <li>Зменшите об'єми за допомогою збалансованого харчування</li>
             <li>
