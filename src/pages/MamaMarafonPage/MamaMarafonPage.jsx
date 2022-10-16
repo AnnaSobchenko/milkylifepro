@@ -1,6 +1,7 @@
 import s from "./MamaMarafonPage.module.scss";
 import Icons from "../../images/symbol-defs.svg";
 import WeeksList from "../../components/WeeksList/WeeksList";
+import AllForYou from "../../components/AllForYou/AllForYou";
 const Photo = require("../../images/marafon.png");
 
 const MamaMarafonPage = () => {
@@ -50,7 +51,7 @@ const MamaMarafonPage = () => {
               займатися йогою у будь-який час
             </li>
             <li>
-              Створите свою капсулу одягу і вас зникне проблема, що одягнути
+              Створите свою капсулу одягу і у вас зникне проблема, що одягнути
             </li>
             <li>
               Ви навчитеся годувати грудьми у задоволення у різних позиціях
@@ -74,6 +75,7 @@ const MamaMarafonPage = () => {
         </a>
       </div>
       <WeeksList />
+      <AllForYou />
     </section>
   );
 };

@@ -8,8 +8,10 @@
   h2 {
     padding: 10px;
     font-size: 5vw;
+    margin-bottom: 15px;
     @media screen and (min-width: 768px) {
       font-size: 3.3vw;
+      margin-bottom: 32px;
     }
   }
   p {
@@ -18,9 +20,7 @@
       font-size: 2vw;
     }
   }
-  li {
-    list-style: circle;
-  }
+
   .hero {
     padding: 20px;
     height: 65vh;
@@ -32,18 +32,18 @@
     background-repeat: no-repeat;
     background-position: center;
     background-image: linear-gradient(
-        rgba(21, 18, 30, 0.6),
-        rgba(12, 13, 17, 0.6)
-      );
+      rgba(21, 18, 30, 0.6),
+      rgba(12, 13, 17, 0.6)
+    );
     justify-content: center;
     color: var(--fourth-text-color);
     @media screen and (min-width: 580px) {
       padding: 2% 10% 2% 50%;
       background-image: linear-gradient(
-        rgba(21, 18, 30, 0.6),
-        rgba(12, 13, 17, 0.6)
-      ),
-      url(../../images/pexels-anna-shvets-3850783.jpg);
+          rgba(21, 18, 30, 0.6),
+          rgba(12, 13, 17, 0.6)
+        ),
+        url(../../images/pexels-anna-shvets-3850783.jpg);
     }
   }
   .options {
@@ -65,6 +65,9 @@
       padding: 20px;
       @media screen and (min-width: 768px) {
         padding: 30px;
+      }
+      li {
+        list-style: circle;
       }
     }
   }
@@ -98,8 +101,21 @@
   }
   .recived {
     padding: 20px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
     @media screen and (min-width: 768px) {
       padding: 50px;
+    }
+    
+    ul {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      @media screen and (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+      }
     }
   }
 }
