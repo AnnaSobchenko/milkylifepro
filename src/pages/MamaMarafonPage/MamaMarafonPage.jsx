@@ -8,10 +8,13 @@ const MamaMarafonPage = () => {
   return (
     <section className={s.mamamarafon}>
       <div className={s.hero}>
-        <h2>Їжа, йога,</h2>
-        <h2> грудне вигодовування </h2>
-        <h2>та стиль для мами</h2>
-        <p className={s.hero__text}>Все, щоб ви почувалися на мільйон, в одному флаконі!</p>
+        <h2>
+          Їжа, йога, <br /> грудне вигодовування <br />
+          та стиль для мами
+        </h2>
+        <p className={s.hero__text}>
+          Все, щоб ви почувалися на мільйон, в одному флаконі!
+        </p>
       </div>
       <div className={`container`}>
         <div className={s.about}>
@@ -25,7 +28,7 @@ const MamaMarafonPage = () => {
             <img src={Photo} alt="replacePhoto" width={550} />
           </div>
           <div className={s.options__describe}>
-            <h2 >Мамо, марафон!</h2>
+            <h2>Мамо, марафон!</h2>
             <p>
               Дівчата, спеціально для вас розробили супер програму для вагітних
               і мам, щоб ви:

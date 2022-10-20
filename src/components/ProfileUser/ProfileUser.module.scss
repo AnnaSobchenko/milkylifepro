@@ -1,6 +1,5 @@
 .card {
   display: flex;
-  box-sizing: border-box;
   width: 50vw;
   height: 50vh;
   border-radius: 50px;
@@ -10,7 +9,6 @@
   flex-direction: column;
   justify-content: center;
   .usercard {
-    box-sizing: border-box;
     width: 90%;
     height: 90%;
     border: 1px solid var(--shadow-color);
@@ -39,7 +37,7 @@
   .btn {
     position: absolute;
     top: 5px;
-   right: 40px;
+    right: 40px;
     font-size: 0.9rem;
     margin-top: 30px;
     padding: 5px 10px;
@@ -49,6 +47,6 @@
     border: none;
     &:hover {
       fill: var(--check-color);
-    }   
+    }
   }
 }

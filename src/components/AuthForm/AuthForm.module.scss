@@ -35,7 +35,6 @@
   input {
     background: #e8f0fe;
     width: 95%;
-    // height: 40px;
     border-radius: 8px;
     font-size: 1.2rem;
   }
@@ -48,7 +47,7 @@
     width: 170px;
     border-radius: 8px;
     border: none;
-    height: 24px;
+    height: auto;
     margin: 0 auto;
     text-align: center;
     cursor: pointer;

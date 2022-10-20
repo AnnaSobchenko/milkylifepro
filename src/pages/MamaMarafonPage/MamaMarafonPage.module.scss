@@ -7,12 +7,12 @@
   }
   h2 {
     padding: 10px;
-    font-size: 5vw;
+    font-size: 4.5vw;
     @media screen and (min-width: 768px) {
       font-size: 3.3vw;
     }
   }
-  &__title{
+  &__title {
     margin-bottom: 15px;
     @media screen and (min-width: 768px) {
       margin-bottom: 32px;
@@ -74,7 +74,7 @@
       li {
         list-style: circle;
       }
-      p{
+      p {
         font-size: 3vw;
         @media screen and (min-width: 768px) {
           font-size: 2vw;
@@ -118,7 +118,7 @@
     @media screen and (min-width: 768px) {
       padding: 50px;
     }
-    
+
     ul {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -131,16 +131,22 @@
   }
 }
 .telegram {
-  width: 70px;
-  height: 70px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   box-shadow: 5px 5px 5px var(--shadow-color), 2px 2px 15px var(--shadow-color);
   position: fixed;
-  bottom: 40px;
-  right: 40px;
+  bottom: 10px;
+  right: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  @media screen and (min-width: 768px) {
+    width: 50px;
+    height: 50px;
+    bottom: 40px;
+    right: 40px;
+  }
   svg {
     fill: var(--accent-button-color);
   }
