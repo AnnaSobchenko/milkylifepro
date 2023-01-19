@@ -1,5 +1,6 @@
 import axios from "axios";
-axios.defaults.baseURL = "https://milkylifepro-rest-api.herokuapp.com/";
+// axios.defaults.baseURL = "https://milkylifepro-rest-api.herokuapp.com/";
+axios.defaults.baseURL = "https://milkylifepro-rest-api.onrender.com";
 // axios.defaults.baseURL = "http://localhost:3001/";
 
 const token = {

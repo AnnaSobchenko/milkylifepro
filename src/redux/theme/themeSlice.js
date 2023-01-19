@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const themeSlice = createSlice({
-  name: "lang",
+  name: "theme",
   initialState: "light",
   reducers: {
     changeTheme(state, { payload }) {

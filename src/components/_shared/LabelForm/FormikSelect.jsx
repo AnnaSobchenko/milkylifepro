@@ -1,5 +1,3 @@
-import { ErrorMessage } from "formik";
-import s from "./LabelForm.module.scss";
 import Select from "react-select";
 
 function FormikSelect({ options, field, form }) {

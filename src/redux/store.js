@@ -16,7 +16,6 @@ import usersReducer from "./user/userSlice";
 import pricesReducer from "./prices/pricesSlice";
 import reviewsReducer from "./reviews/reviewsSlice";
 import themeReducer from "./theme/themeSlice";
-import langReducer from "./lang/langSlice";
 
 const authPersistConfig = {
   key: "auth",
@@ -54,7 +53,7 @@ const reviewsPersistedReducer = persistReducer(
 const rootPersistConfig = {
   key: "root",
   storage,
-  whitelist: ["theme", "lang"],
+  whitelist: ["theme"],
 };
 
 const rootReducer = combineReducers({
@@ -63,7 +62,6 @@ const rootReducer = combineReducers({
   prices: pricesPersistedReducer,
   reviews: reviewsPersistedReducer,
   theme: themeReducer,
-  lang: langReducer,
 });
 const rootPersistedReducer = persistReducer(rootPersistConfig, rootReducer);
 

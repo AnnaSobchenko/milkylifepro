@@ -6,7 +6,6 @@ const CardUser = ({ contact, closeModal }) => {
   const dispatch = useDispatch();
   const handleDelete = async (e) => {
     const _id = e.target.value;
-    // console.log("_id :>> ", _id);
     await dispatch(delUserById(_id));
     closeModal(true);
     dispatch(getAllUsers());

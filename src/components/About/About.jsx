@@ -31,8 +31,15 @@ const About = () => {
           пологів і для годуючих мам.
         </p>
         <p className={s.text}>
-          Буду рада із вами поспілкуватися. Якщо виникли питання пишіть мені в  &nbsp;
-          <a rel="noopener noreferrer" target="_blank" href="https://t.me/Olesia_Foremna">Телеграм</a>
+          Буду рада із вами поспілкуватися. Якщо виникли питання пишіть мені в
+          &nbsp;
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://t.me/Olesia_Foremna"
+          >
+            Телеграм
+          </a>
         </p>
         <p className={s.text}> Ваша, Олеся Форемна</p>
       </div>

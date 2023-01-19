@@ -1,7 +1,6 @@
 import "./App.scss";
 import { Suspense, useEffect } from "react";
 import {
-  BrowserRouter as Router,
   Routes,
   Route,
   Navigate,

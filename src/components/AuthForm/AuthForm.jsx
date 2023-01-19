@@ -14,7 +14,6 @@ const AuthForm = ({ isAuth }) => {
   return (
     <Formik
       initialValues={{ email: "", password: "" }}
-      // validationSchema={authValidationSchema}
     >
       {({
         values,

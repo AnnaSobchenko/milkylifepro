@@ -36,7 +36,7 @@ const Footer = () => {
         </svg>
       </a>
       </div> 
-      <p>© 2022 | All Rights Reserved |&nbsp;</p>
+      <p>© 2023 | All Rights Reserved |&nbsp;</p>
       <p>
         Milky Life Pro
         <span className={s.footerHeart}> ❤ </span> &zwnj;
